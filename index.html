@@ -1,0 +1,328 @@
+
+<!DOCTYPE html>
+
+<html><head>
+<title></title>
+<link href="https://app.topnotepad.com/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="https://app.topnotepad.com/css/main.2.4.css" rel="stylesheet" type="text/css" />
+<link href="https://app.topnotepad.com/css/icons.css" rel="stylesheet" type="text/css" />
+<link href="https://app.topnotepad.com/css/responsive1.0.css" rel="stylesheet" type="text/css" />
+<link href="https://app.topnotepad.com/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="https://app.topnotepad.com/css/jquery-ui.css">
+<link href="https://app.topnotepad.com/template/invoice.css" rel="stylesheet">
+
+<!-- HTML5 Shiv and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+<script src="https://app.topnotepad.com/js/modernizr.min.js"></script>
+<script src="https://app.topnotepad.com/js/jquery.min.js"></script>
+
+</head>
+<body class="fixed-left">
+<div id="wrapper">
+  <div class="frnt-inv">
+	<div class="row text-center">
+		<div class="col-md-1"></div>
+		<!--<div class="col-md-10"><div class="container"><img src="images/logo-color.jpg">--><h1 class="header-title"><p>
+		Medical Invoice Generator</p><br><p class="font-10" style="text-transform:none;">(Fill the below details and click on generate button)</p></h1></div></div>
+		<div class="col-md-1"></div>
+	</div>
+        
+<div class="row">
+<div class="col-md-1"></div>
+	<div class="col-md-10">
+		<div class="content">
+			<div class="container">
+			<p></p>
+			<form name="online" id="online" method="post" enctype="multipart/form-data">
+				<input type="hidden" value="Save" name="action">
+				<input type="hidden" value="8ee21d97-129b-7625-938b-516fa1afb3a1" name="country">
+				<input type="hidden" value="PK" name="country_code">
+				<input type="hidden" value="invoice" name="src">
+				<input type="hidden" value="Asia/Karachi" name="timezone">
+				<input type="hidden" value="1636095067" name="logo_id" id="id">	
+				<input type="hidden" value="1636095067" id="ext">	
+				<input type="hidden" value="3" id="rwc">	
+				<div class="hidden-print pull-center p-b-10">
+					<button type="submit" name="manifest" class="btn btn-success btn-mrgn-right waves-effect waves-light">I'm done! Generate <span class="lbl_sp">Invoice</span></button>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="panel panel-default">
+							<div class="panel-body pay-border style2-padding">
+								<div class="clearfix">
+									<div class="col-md-12">
+										<div class="pull-left gen-inv3 col-md-6 style2-h2">
+											<div class="row">
+												<div class="form-group">
+													<div class="col-md-12 col-xs-12 m-b-10">
+														<input type="text" id="company_name" name="company_name" required data-parsley-required-message="Please provide your company name" placeholder="Your Company Name" class="signup-control form-heading" />
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="form-group">
+													<div class="col-md-12 col-xs-12 m-b-10">
+														<input type="text" name="tax_id" placeholder="Tax Name" class="signup-control two-inp-25" />
+														<input type="text" name="tax_num" placeholder="Tax Number" class="signup-control two-inp-75" />
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="form-group">
+													<div class="col-md-12 col-xs-12 m-b-10">
+														<textarea name="company_address" placeholder="Your Address" class="expanding signup-control"></textarea>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="form-group">
+													<div class="col-md-12 col-xs-12 m-b-10">
+														<input type="text" name="contact_no" id="contact_no" placeholder="Your Contact Number" class="signup-control" />
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="form-group">
+													<div class="col-md-12 col-xs-12 m-b-10">
+														<input type="email" name="support_email" placeholder="Your Email" onchange="checkUser(this.value,'msg_email');" onfocus="changeMsgClass();" id="support_email" required class="signup-control" />
+														<div class="tarrow_box display-none" id="msg_email"></div>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="form-group">
+													<div class="col-md-12 col-xs-12 m-b-10">
+														<input type="text" name="url" placeholder="Your Website" class="signup-control" />
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-md-4"></div>
+										<div class="col-md-2 pull-right">
+											<div class="col-md-12">
+												<div id="logo_prev"><div id="logo" class="box">
+													<a href="#"><div class="overlay">
+													<span class="add"><img src="images/edit-overlay.png"></span>
+													</div></a></div>
+												</div>
+												<input type="file" name="logo" id="logo-upload" class="display-none" />
+											</div>
+											<div class="col-md-12 m-t-10"></div>
+											<div class="col-md-12">
+												<select name="heading" onchange="changeLabel(this.value);" id="heading" class="heading-dropdown-label estimate m-t-10"><option value="Invoice">Invoice</option><option value="TaxInvoice">Tax Invoice</option><option value="VatInvoice">VAT Invoice</option><option value="SimplifiedTaxInvoice">Simplified Tax Invoice</option></select>
+											</div>
+											
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-6  gen-inv3 style2-h2">
+										<input type="text" disabled placeholder='Bill To' class="signup-control" >
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-12">
+										<div class="pull-left col-md-6">
+											<div class="pull-left gen-inv3  col-md-12">
+											  <input type="text" name="name" placeholder="Client's Name" required data-parsley-required-message="Please provide customer name" id="name" class="signup-control"><br/>
+											  <textarea name="address" placeholder="Client's Address" class="expanding signup-control"></textarea>
+											  
+											  <input type="text" name="mobile" placeholder="Client's Contact Number" class="signup-control"><br />
+											  <input type="text" class="signup-control" name="email" placeholder="Client's Email"><br />
+											</div>
+										</div>
+										<div class="col-md-5 pull-right">
+											<div class="pull-right pull-right-pclr gen-edt-detail-div">
+												<a title="You may optionally enter an alpha numeric prefix to your invoice." rel='tooltip' data-placement='top' data-html='true' class="tltpcolor"> 
+													<input type="text" disabled placeholder="Invoice #" class="signup-control lbl">
+												</a><input type="text" name="invoice_no" placeholder="Invoice #" id="invoice_no" required data-parsley-trigger="keyup" data-parsley-type="digits" data-parsley-error-message="Numeric value only." value="1" class="signup-control lbl"><br />
+												<input type="text" class="signup-control" placeholder="Date" disabled>
+												<input type="text" class="signup-control" name="date" value="21-Sep-2021" placeholder="21-Sep-2021" required data-parsley-pattern="(0[1-9]|1[0-9]|2[0-9]|3[01])-[a-zA-Z]{3}-[0-9]{4}" data-parsley-error-message="Format: DD-MON-YYYY" id="datepicker-autoclose"><br />
+												
+											</div>		
+										</div>
+									</div>
+								</div>
+								<div class="row m-t-30">
+									<div class="col-md-3"></div>
+									<div class="col-md-6">
+										
+									</div>
+									<div class="col-md-3">
+										<div class="columns columns-right btn-group pull-right">
+										  <button class="btn btn-default" id="add" type="button"><i class="ion-ios7-plus-empty"></i></button>
+										</div>	
+									</div>
+								</div>
+								
+								<div class="row">
+									<div class="col-md-12">
+										
+										<div class="table-responsive">
+											<table id="price_summary" class="table-bordered table invoice">
+												<thead>
+													<tr>
+														<th class="edit-inv-th1">Description</th>
+														<th class="edit-inv-th print-inv-th-wd" width="11%"><select class="dropdown" name="qty_label"><option value="qty">Qty</option><option value="units">Units</option><option value="hour">Hours</option><option value="mi">Miles</option><option value="km">Kms</option><option value="in">Inch</option><option value="oz">Oz</option><option value="lb">Lb</option><option value="kg">Kgs</option><option value="gm">Gms</option><option value="mg">Mgs</option><option value="gal">Gal</option><option value="pax">Pax</option></select></th>
+														<th class="edit-inv-th print-inv-th-wd" width="11%"><select class="dropdown" name="prc_label"><option value="Rate">Rate</option><option value="Price">Price</option></select></th>
+														<th class="edit-inv-th print-inv-th-wd" width="11%">Discount</th>
+														<th class="edit-inv-th print-inv-th-wd" id="th_tax" width="10%"><select class="dropdown" id="tax_name"  name="tax_name"><option value="GCT">GCT</option><option value="GST" selected>GST</option><option value="HST">HST</option><option value="IGST">IGST</option><option value="PST">PST</option><option value="QST">QST</option><option value="Sales Tax"> Sales Tax</option><option value="VAT">VAT</option></select></th>
+														<th class="edit-inv-th print-inv-th-wd" width="11%">Amount</th>
+														<th class="edit-inv-th" width="1%">&nbsp;</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr id="tr_pr_new">
+														<td>
+															<a title="Enter your product/service description." rel='tooltip' data-placement='bottom' data-html='true' class="tltpcolor">
+															<textarea name="pr_new[]" id="pr_new" style="height:50px;" class="form-control expanding" placeholder="Product/service description." ></textarea>
+															</a>	
+														</td>
+														<td><a title="Enter quantity. Example: 7 or 9 hours or 3 bags" rel='tooltip' data-placement='bottom' data-html='true' class="tltpcolor">
+																<input type="text" name="qty_new[]" id="qty_new" value="1" onkeyup="checkValue('qty_new','prc_new','amt_new');" class="form-control edit-inp-td number-format" /></a></td>
+														<td><a title="Enter per unit price of your product or service." rel='tooltip' data-placement='bottom' data-html='true' class="tltpcolor">
+																<input type="text" name="prc_new[]" id="prc_new" value="10" onkeyup="checkValue('qty_new','prc_new','amt_new');" class="form-control edit-inp-td number-format" /></a></td>
+														<td><div class="form-inline">
+															<input type="text" name="discount[]" id="discount_new" class="form-control edit-inp-td-mul-taxr number-format" onkeyup="changeAmt('new','discount');" value="0">
+															<select class="form-control" id="discount_type_new" name='discount_type_new[]' onchange="changeAmt('new','type');" ><option value="per">%</option><option value="value" selected>#</option></select></div>
+														</td>
+														
+														<td><a title="Just enter the rate of tax i.e., just the numeric value. Example: 10" rel='tooltip' data-placement='bottom' data-html='true' class="tltpcolor">
+																<input type="text" name="tax1_rate_new[]" id="tax1_rate_new" class="form-control edit-inp-td number-format" value="" placeholder="%" onkeyup="calculateTax(this.value,'tax1','new');">
+															</a>
+															</td>
+														<td align="right"> <input type="hidden" name="amt_actual_new[]" id="amt_actual_new" value="0" />
+														 <input type="text" name="amt_new[]" id="amt_new" value="10" readonly class="form-control edit-inp-td number-format" /></td>
+														<td><i class="fa fa-trash-o dlt-btn pointer" title="Click here to delete this record" onclick="javascript:deleteRecord('tr_pr_new');" ></i></td>
+													</tr>
+													<tr id="tr_pr_1">
+														<td>
+															<textarea name="pr_new[]" id="pr_1" style="height:50px;" class="form-control expanding"></textarea>
+														</td>
+														<td>
+															<input type="text" name="qty_new[]" id="qty_1" value="0" onkeyup="checkValue('qty_1','prc_1','amt_1');" class="form-control edit-inp-td number-format" />
+														</td>
+														<td>
+															<input type="text" name="prc_new[]" id="prc_1" value="0" onkeyup="checkValue('qty_1','prc_1','amt_1');" class="form-control edit-inp-td number-format" />
+														</td>
+														<td><div class="form-inline">
+															<input type="text" name="discount[]" id="discount_1" class="form-control edit-inp-td-mul-taxr number-format" onkeyup="changeAmt('1','discount');" value="0">
+															<select class="form-control" id="discount_type_1" name='discount_type_new[]' onchange="changeAmt('1','type');" ><option value="per">%</option><option value="value" selected>#</option></select></div>
+														</td>
+														<td>
+															<input type="text" name="tax1_rate_new[]" id="tax1_rate_1" class="form-control edit-inp-td number-format" value="" placeholder="%" onkeyup="calculateTax(this.value,'tax1','1');">
+														</td>
+														<td align="right"> <input type="hidden" name="amt_actual_new[]" id="amt_actual_1" value="0" />
+														 <input type="text" name="amt_new[]" id="amt_1" value="0" readonly class="form-control edit-inp-td number-format" /></td>
+														<td><i class="fa fa-trash-o dlt-btn pointer" title="Click here to delete this record" onclick="javascript:deleteRecord('tr_pr_1');" ></i></td>
+													</tr>
+													<tr id="tr_pr_2">
+														<td>
+															<textarea name="pr_new[]" id="pr_2" style="height:50px;" class="form-control expanding"></textarea>
+														</td>
+														<td>
+															<input type="text" name="qty_new[]" id="qty_2" value="0" onkeyup="checkValue('qty_2','prc_2','amt_2');" class="form-control edit-inp-td number-format" />
+														</td>
+														<td>
+															<input type="text" name="prc_new[]" id="prc_2" value="0" onkeyup="checkValue('qty_2','prc_2','amt_2');" class="form-control edit-inp-td number-format" />
+														</td>
+														<td><div class="form-inline">
+															<input type="text" name="discount[]" id="discount_2" class="form-control edit-inp-td-mul-taxr number-format" onkeyup="changeAmt('2','discount');" value="0">
+															<select class="form-control" id="discount_type_2" name='discount_type_new[]' onchange="changeAmt('2','type');" ><option value="per">%</option><option value="value" selected>#</option></select></div>
+														</td>
+														<td>
+															<input type="text" name="tax1_rate_new[]" id="tax1_rate_2" class="form-control edit-inp-td number-format" value="" placeholder="%" onkeyup="calculateTax(this.value,'tax1','2');">
+														</td>
+														<td align="right"> <input type="hidden" name="amt_actual_new[]" id="amt_actual_2" value="0" />
+														 <input type="text" name="amt_new[]" id="amt_2" value="0" readonly class="form-control edit-inp-td number-format" /></td>
+														<td><i class="fa fa-trash-o dlt-btn pointer" title="Click here to delete this record" onclick="javascript:deleteRecord('tr_pr_2');" ></i></td>
+													</tr>
+													
+													<tr id="tot_tr">
+														<td colspan="5"><div class="pull-right"><b>Total</b></div></td>
+														<td align="right"><input type="text" name="tot_amt" disabled="disabled" id="amt" value="10" class="form-control edit-inp-td number-format"></td>
+														<td></td>
+													</tr>
+													<tr id="tax1_tr">
+														<td colspan="5"><div class="pull-right form-inline"> <span id="t1_label" class="font-600">GST</span>&nbsp;&nbsp;
+															
+															</div>
+														</td>  
+														<td align="right"><input type="text" name="tax1_value" disabled  class="form-control edit-inp-td number-format" id="tax1_val" value="0" /></td>
+														<td></td>
+													</tr>
+													<tr>
+														<td colspan="5"><div class="pull-right form-inline"><a title="Additional charges to deliver the product or service. Select appropriate value from the drop down and enter the amount in the adjacent cell. " rel='tooltip' data-placement='left' data-html='true' class="tltpcolor">
+																<select name="ext_amt_label" class="form-control"><option value="shipping_charges">Shipping Charges</option><option value="convenience_fee">Convenience Fee</option><option value="courier_charges">Courier Charges</option><option value="delivery_charges">Delivery Charges</option><option value="gratuity">Gratuity</option><option value="round_off">Round Off</option></select>&nbsp;&nbsp;
+															</a></div>
+														</td>
+														<td align="right"><input type="text" id="extra_amt" value="0" name="extra_amount" onkeyup="updateNetAmt();" class="form-control edit-inp-td number-format"></td>
+														<td></td>
+													</tr>
+													<tr id="net_tr">
+														<td colspan="5"><div align="right"><b>Net Amount</b><select class="signup-dropdown" name="main_currency" id="curr"  onchange="changeCurrency(this.value,'currency');"><option value="4b601541-c30e-07b5-0664-519079eb6594">AED</option><option value="d6cac3d8-11e6-d626-c8b7-56290ad6f6bd">AFN</option><option value="4d978fb4-79b7-f64b-a4a9-56290a04e697">ALL</option><option value="cf594a97-25f9-4fc4-75ad-56290b71cf39">AMD</option><option value="5c96e1a4-a4d1-bd38-0b88-56cc009053e2">ANG</option><option value="94d9bda3-098c-94ea-4818-56290a0c86cd">AOA</option><option value="55432f78-6627-e72d-66be-56290bfe493f">ARS</option><option value="e2fcbdc1-96cc-7672-057d-51d567ad5cb8">AUD</option><option value="4d620595-4948-378d-1006-56290bf9bf6f">AWG</option><option value="555dad45-ded0-087c-ab60-56290ba695eb">AZN</option><option value="77528c49-0f99-3aae-7b99-56cbfea9c82c">BAM</option><option value="76538837-45f0-853e-878c-56cbfd72c53e">BBD</option><option value="7b79607d-d832-4b53-863d-57061c9f722f">BDI</option><option value="a9e8868d-3e0a-8add-82e0-51d7f84d2729">BDT</option><option value="d1ca0539-5a90-5cc1-6fb0-56cbfe369fad">BGN</option><option value="9edcbe87-39fe-fe70-891f-56a83417d9ef">BHD</option><option value="2ce6f2b4-b2ec-6e46-0730-56cbfee83d1c">BMD</option><option value="5b8e0910-21a5-184f-9ed3-56cbfe22c4d3">BND</option><option value="1277328e-f5dd-ff6c-8a12-56cbfe4c8f13">BOB</option><option value="7ea1e400-ac65-dfe0-3775-56cbfe6ddb8d">BRL</option><option value="48425874-b268-312f-99a5-56cbfb593efe">BSD</option><option value="b3ec9b55-393c-19b4-71d5-5a87deab0ccd">BTC</option><option value="110ae064-df4a-8d62-ca5f-56cbfead1442">BWP</option><option value="9babae27-824b-7bf0-c415-56cbfdb13ef2">BYR</option><option value="707ef7b7-d7fe-845c-f0fc-56cbfdb6322f">BZD</option><option value="e05d2849-0471-a46c-4773-52aff0c882f5">CAD</option><option value="13f10577-22d2-2b56-981e-56290991fbf1">CFA</option><option value="955e5be0-ea6a-af63-733d-56cc009ba8fc">CHF</option><option value="ed4251b4-8a88-1019-f1dc-56cbfe9ffdab">CLP</option><option value="45196970-7dd1-d265-5ded-56cbfe9129dc">CNY</option><option value="208aaf37-1ba4-e189-2ab1-56cbfe4d7f20">COP</option><option value="bce1ce16-ff6b-5677-ef33-56cbfe81d0ec">CRC</option><option value="6dc7ec77-b4b6-675a-20dd-56cbfec0ab30">CUP</option><option value="62fc5328-f396-6953-2439-56cbfe694d9e">CZK</option><option value="374368ba-540d-c975-7189-56cbfe823ef7">DKK</option><option value="7aabdb17-d839-001a-1b4b-56cbfe0074a2">DOP</option><option value="5afc0109-737a-0505-a8f5-56290a7d1d26">DZD</option><option value="3aa9b8db-7462-9751-0fec-56eb8774fccf">ECS</option><option value="60f88b4a-4a59-0c8e-d1d7-5340f15d6eaf">EGP</option><option value="ae7702c8-3201-a88d-28ec-5a87de7cc19c">ETH</option><option value="ad76fb3f-fec9-5649-3da5-56290ac02338">EUR</option><option value="2d715686-eba1-71b6-3b6a-56cbff620d13">FJD</option><option value="be25f9aa-4e5a-34fb-8f70-56cbfef5c9c9">FKP</option><option value="bbe9896f-8a96-f54d-dc44-5190730b2738">GBP</option><option value="18ad1b48-8d01-0e1b-c665-56cbffe7d752">GGP</option><option value="84025045-9100-aab3-b2a6-56cbff25d173">GHS</option><option value="935003b7-398b-a0fb-64c7-56cbffcfda33">GIP</option><option value="19a48c02-f96c-59bc-4b09-56cbff1bd420">GTQ</option><option value="a6597cde-d041-735c-e38f-56cbff1badc5">GYD</option><option value="1a185842-6d78-8608-29c2-56cbff73abe5">HKD</option><option value="45db1b8c-9b5a-00e8-c922-56cbffeed08f">HNL</option><option value="9a739cec-67a0-e719-3ff2-56cbfec5ede5">HRK</option><option value="9f4eac05-ccd3-3ff6-202c-5562bbb5df18">HUF</option><option value="13c5a83b-9230-c404-47d5-56cbff65f2c3">IDR</option><option value="fa6502ef-532a-c103-6e60-56cbffaa3779">ILS</option><option value="a55cc5dc-112e-b41b-7de0-56cbff298a8e">IMP</option><option value="3b4108e8-6ea2-63d8-e857-51651786f11d">INR</option><option value="46707599-de77-4e70-5fd4-56cbff0eab00">IRR</option><option value="4a2622a5-4dbe-1758-c988-5e48f0f710b4">ISK</option><option value="ba3be283-4862-f37e-984d-56cbff515a83">ISK</option><option value="ac63697b-d984-3f01-c8fb-56cbff5cc37c">JEP</option><option value="ad1cfbb8-c3f5-a9f6-a221-56cbff33ff92">JMD</option><option value="a6b02e07-2cef-10e5-6f80-56a9e2e50ff3">JOD</option><option value="4defc212-d615-b3d9-36bb-56cbffe97401">JPY</option><option value="d2550b0d-71e5-0430-8cb3-56992dec8c42">KES</option><option value="698eb8f7-8103-143d-eb92-56cc00f348e2">KGS</option><option value="382fbbfc-2c40-985b-7320-56cbfefe7ce6">KHR</option><option value="758d694f-57af-9710-9a39-56cbff965a72">KPW</option><option value="8fc5dc23-b747-5c40-fea7-56cc000a2a85">KRW</option><option value="7e02efbe-d919-d697-06a8-5bf14a792a0c">KWD</option><option value="9caada0e-950b-d120-6be7-56cbfe4850a4">KYD</option><option value="b8216f30-6c47-02e9-2913-56cbff534715">KZT</option><option value="55b34a9e-b516-800f-ba54-56cc00a0d34b">LAK</option><option value="31c8bc13-c529-a89e-effc-56cc008e3228">LBP</option><option value="a1e7ca6a-0716-1b4d-2cb9-56cc004fb459">LKR</option><option value="15e661c4-b7a3-4621-0224-56cc00952294">LRD</option><option value="72f1651e-a117-cec6-90cc-60f7dfe81f1c">LSL</option><option value="9bcb7871-489e-1e96-3622-5a87de513032">LTC</option><option value="14a86071-00de-fd88-cff5-570bb568f7fb">LVL</option><option value="4c93ba61-cfde-73f8-5759-56cc00266f69">MKD</option><option value="ba38c186-ebbd-8129-8e35-5d7f21409502">MMK</option><option value="9abb3309-58ba-1815-db4a-56cc004d4589">MNT</option><option value="d18f09ba-aeb6-88b0-3e31-56cc0065183d">MUR</option><option value="a6a0c627-c8a5-8d24-622a-5dc5a0307c95">MVR</option><option value="6008e6b2-e1b3-6272-46ec-56cc008f54d4">MXN</option><option value="923b650c-8f0e-5e91-49b3-518e43667282">MYR</option><option value="90250302-3447-b418-e2f4-56cc00b146bb">MZN</option><option value="96c3fe25-41e8-7e31-6a0c-56cc00086f80">NAD</option><option value="a8966734-3969-8af7-f739-569d04de1cf8">NGN</option><option value="c77dc857-e406-65ae-32dc-56cc00af8380">NIO</option><option value="bbea5142-5add-dcb0-456a-56cc00187078">NOK</option><option value="1a122cc0-e3f4-464a-bd73-51d7f8872258">NPR</option><option value="d1afc085-1c0b-c177-ac0c-51d5680c6081">NZD</option><option value="8a78f4e2-4ad1-8d72-ff1f-56a9e207c955">OMR</option><option value="aa100ead-ef73-df80-e640-56cc002e59be">PAB</option><option value="4f0a2da8-b192-5ada-1361-56cc002f1870">PEN</option><option value="e2a296ad-5ac6-5b29-78f8-6020d2a39859">PGK</option><option value="2e5e2e20-ee61-ec09-5026-51d7fe31f69f">PHP</option><option value="c12dd2d5-c439-1a99-4fec-56962ab90f7d" selected>PKR</option><option value="6a94ea20-1735-36c1-5d97-56cc001f0b4a">PLN</option><option value="a13c9844-9c40-e2e6-edae-56cc006f2990">PYG</option><option value="d742cd6d-c28a-1837-ca69-56cc00bf21ea">QAR</option><option value="45de5251-0319-4788-6042-56cc0005b8bf">RON</option><option value="1c11cfe2-c250-f05a-42b3-56cc00af9117">RSD</option><option value="e675108e-82e0-dd39-8c0c-56cc0055115c">RUB</option><option value="c263adba-3883-4378-98c9-5f61d08ccde2">RWF</option><option value="967f8b7b-5f88-35e2-78bc-56a9e1f814d9">SAR</option><option value="87ece89c-2b1b-e1bd-e5e5-56cc0013e89b">SBD</option><option value="c5d92849-d800-3cec-0cbf-56cc0058fd16">SCR</option><option value="ac3ee55f-ed65-dd17-ff55-56cc00311d11">SEK</option><option value="274d55a6-8c31-0e98-26e1-519079c65bc7">SGD</option><option value="f2cd8efe-073f-f0f9-71cc-56cc0009397d">SHP</option><option value="68e375e6-fd52-471a-808f-56cc00ae1436">SOS</option><option value="52ca0225-af2d-a195-0901-56cc00665eb0">SRD</option><option value="77734df7-46c4-5712-243d-56cbfe1a59bd">SVC</option><option value="21a54388-3164-5d09-1af7-56cc00fc1917">SYP</option><option value="9cb89161-2e50-13e7-68ad-5e5f6db1d93a">SZL</option><option value="bb836593-6561-6334-529e-56cc0043bcbd">THB</option><option value="379e4856-38ac-f988-1de1-60e816c04c25">TOP</option><option value="4aa0c741-f46a-5aee-5dbe-56cc01f04fe6">TRY</option><option value="4de27953-b880-09f2-cf39-56cc015952e3">TTD</option><option value="437c898d-7317-e9d8-c944-56cc01afdee2">TVD</option><option value="1a066fae-4714-b287-bc5f-56cc0052fec2">TWD</option><option value="b4842145-01bd-1bb9-c1bc-60c4c8187ce3">TZS</option><option value="1c36a6eb-5954-9f7f-f8fc-56cc0198f189">UAH</option><option value="8aeb5cf6-56cd-88f6-a301-5ec23e1b4f75">UGX</option><option value="d0d59006-0a15-b4eb-2790-519072cd8b94">USD</option><option value="1e53c507-4475-73fe-a846-56cc01737b8f">UYU</option><option value="ac2cc20e-c5fb-b42c-97ec-56cc01caf611">UZS</option><option value="92fef311-8ca7-faf6-0a5c-56cc011f09bb">VEF</option><option value="42ab09c2-d9fb-9e45-2288-56cc01bc9891">VND</option><option value="4a551439-b95e-606a-1d9f-58afcb55af12">VUV</option><option value="47b97f0b-3cd0-4d9a-9ade-6003d77b769f">WST</option><option value="6a59e05c-5ca7-add7-8071-56290a94ae35">XCD</option><option value="84ff9dd3-0b6c-efa8-5530-56cc01e0d280">YER</option><option value="abe6fc9f-07af-78ed-7b50-51d5673d6837">ZAR</option><option value="f3684553-649c-aa56-a7c2-5a5b0c5f0ccc">ZMW</option><option value="72ef05ee-6361-069c-261c-56cc01269688">ZWD</option></select></div></td>
+														<td align="right"><input type="text" name="net_amount" disabled="disabled" class="form-control edit-inp-td number-format" id="net" value="10" />
+														<td></td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+										
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-12">
+									  <h4>Notes</h4>
+									  <textarea name="notes" class="form-control" id="notes" placeholder="Notes - any relevant information not already covered"></textarea>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-12">
+									  <h4>Terms & Conditions </h4>
+									  <div id="edit-terms"><textarea id="elm1" name="invoice_terms" placeholder="Terms and conditions- late fees, payment methods, delivery schedule ..." class="form-control"></textarea></div>
+									</div>
+								</div>
+								<br>
+			  
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="hidden-print pay-print-margin pull-center">
+					<button type="submit" name="manifest" class="btn btn-success btn-mrgn-right waves-effect waves-light">I'm done! Generate <span class="lbl_sp">Invoice</span></button>
+				</div>
+				<div class="form-group signup-chck" style="text-align:center">
+					<span>
+					
+					</span>
+				</div>
+				<br>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+	
+
+	</div>
+</div>
+<div class="pull-center">
+</div><br />
+	<script src="https://app.topnotepad.com/js/jquery-ui.js"></script>
+	<script src="https://app.topnotepad.com/js/bootstrap.min.js"></script> 
+	<script src="https://app.topnotepad.com/js/bootbox.js"></script>
+	<script type="text/javascript" src="https://app.topnotepad.com/js/parsley.min.js"></script>
+	<script src="https://app.topnotepad.com/js/expanding.js"></script>
+	<script type="text/javascript" src="https://app.topnotepad.com/template/main.js"></script>
+	<script>
+            var resizefunc = [];
+			$('input').attr('autocomplete','off');
+        </script> 
+
+</body>
+</html>
